@@ -1,28 +1,21 @@
 'use strict'
 
 /*
-REPL:
- read - прочитай
- eval - виконай
- print - виведи
- loop - повтори
-
-*/
-
-const {MyMath} = require('./MyMath')
-const {Component}  = require('./Component.js');
-
-const sum = MyMath.sum(2,2)
-console.log(sum);
-
-const mult = MyMath.mult(2,3)
-console.log(mult);
-
-const component = new Component()
-console.log(component);
-
-/*
-Створіть декілька функцій або класів, 
-спробуйте їх експортувати і імпортувати у index.js
+Коли ми працюємо із функцією
+how works REQUIRE
+require(path) має 5 етапів
+- resolving (шукає файл) -> loading (читає файл) ->
+-> wrappening (обгортування у нодівський контекст) -> 
+-> evaluation (код виконується) -> caching (кеширюється результат)
+ 
+resolving:
+   1) Core modules - встроєні модулі
+   2) File:
+        .js || *.json
+   3) File:
+         package.json -> 'main'   
+         index.js || index.json
+   4) node_modules        
+   5) throw new Error
 
 */
