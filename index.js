@@ -3,8 +3,14 @@
 const fs = require('fs').promises
 console.log(fs);
 
-const p = fs.readFile('./text.txt', 'utf-8');
-p.then(data=>console.log(data))
+ fs.readFile('./text.txt', 'utf-8')
+ .then(content=>{
+    const newContent = `OLD content: ${content} and MEW content: 'Hello world' `
+fs.writeFile('./newfile.txt', newContent,'utf8') // перезаписує файли
 
-const p1 = fs.readFile('./text2.txt', 'utf-8');
-p1.then(data=>console.log(data))
+ })
+
+
+
+
+
